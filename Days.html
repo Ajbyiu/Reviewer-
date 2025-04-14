@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monday To-Do List</title>
+    <link rel="stylesheet" href="HomePage.css">     <!-- Link to Homepage.css Design -->
+</head>
+<body>
+    <div class="container">
+        <h1>Monday To-Do List</h1>      <!--Title-->
+        <div class="day-section" id="monday"> 
+            <h2>Monday</h2>     <!--(Days)-->
+            <input type="text" placeholder="Add task" id="mondayInput"> <!--(Input text |User|)-->
+            <button onclick="addTask()">Add</button>    <!--(Button add task)-->
+            <ul class="task-list" id="mondayList"></ul> <!--(list)-->
+        </div>
+    </div>
+<!-- Check Symbol &#x2714;-->
+<!-- Wrong Symbol &#x2716;-->
+ <!-- li (List Item)-->
+    <script>
+        function addTask() {
+            let inputField = document.getElementById("mondayInput");
+            let taskText = inputField.value.trim(); // Better spacing text
+
+            if (taskText === "") return; // para dili mo add kung mo add ka nga way text ge butang 
+
+            let list = document.getElementById("mondayList"); 
+
+            let taskItem = document.createElement("li"); //create list 
+            taskItem.classList.add("task-item"); // add item to list 
+            
+            taskItem.innerHTML = `
+                <span>${taskText}</span>
+                <button class="complete-btn" onclick="completeTask(this)">✔</button>   
+                <button class="delete-btn" onclick="deleteTask(this)">✖</button>  
+            `;
+
+            list.appendChild(taskItem); //adding task (end)
+            inputField.value = ""; //removing task
+        }
+// Check Mark
+        function completeTask(button) {
+            let taskItem = button.parentElement;
+            taskItem.classList.toggle("completed"); // Turn task to green
+        }
+// X Mark 
+        function deleteTask(button) {
+            let taskItem = button.parentElement;
+            taskItem.remove();
+        }
+    </script>
+</body>
+</html>

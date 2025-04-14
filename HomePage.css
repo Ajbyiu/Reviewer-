@@ -1,0 +1,95 @@
+/* To Do List (HomePage Style) */
+
+
+/* design of the background, text alignment, Font Style, Spaces*/
+body {
+font-family: Arial, sans-serif;
+background-color: #f9f3eb;
+text-align: center;
+padding: 20px;
+}
+
+
+
+/*Main Title Size and Color*/
+h1 {
+font-size: 28px;
+color: #5a3e36;
+}
+
+/* Days(Monday) Color*/
+h2{
+    color: #5a3e36;
+}
+
+
+
+/* List Design */
+.task-list {
+list-style: none;
+padding: 0;
+}
+/* List of task of the users that input (Design) */
+.task-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+border-bottom: 1px solid #ddd;
+background-color: #fff5f3;
+border-radius: 5px;
+margin-top: 5px;
+}
+
+
+
+/* Button Styles */
+.task-item .complete-btn {      /* Styles in check Button(complete) */
+background-color: #77dd77;
+color: white;
+padding: 5px 10px;
+border: none;
+cursor: pointer;
+}
+input, button { /* input buttun and button Style */
+padding: 10px;
+margin: 5px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+
+button {   /*Button Color Style*/
+background-color: #d88c9a;
+color: white;
+border: none;
+cursor: pointer;
+}
+
+button:hover {  
+background-color: #c76b82;
+}
+
+
+
+/* Completed Task Style  and Delete */
+.completed {
+background-color: #77dd77; /* Turns the background green (completed) */
+color: white;
+}
+
+.task-item .complete-btn:hover {
+background-color: #05f705;
+}
+
+.task-item .delete-btn {
+background-color: #f81105;
+color: white;
+padding: 5px 10px;
+border: none;
+cursor: pointer;
+}
+
+.task-item .delete-btn:hover {
+background-color: #9a0d03;
+}
+

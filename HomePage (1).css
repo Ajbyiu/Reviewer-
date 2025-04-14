@@ -1,0 +1,98 @@
+/* To Do List (HomePage Style) */
+
+/* design of the background, text alignment, Font Style, Spaces */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f3eb;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Main Title Size and Color */
+  h1 {
+    font-size: 28px;
+    color: #5a3e36;
+  }
+  
+  /* Days (Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday) Color */
+  h2 {
+    color: #5a3e36;
+  }
+  
+  /* List Design */
+  .task-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* List of tasks the user inputs (text)(Design) */
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff5f3;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  /* Button Styles */
+  .task-item .complete-btn { /* Styles in check Button */
+    background-color: #25e225;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input, button { /* Input and button style */
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button { /* Button (Color) Style */
+    background-color: #d88c9a;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+    /* Button Hover (color) Style */
+  button:hover {
+    background-color: #c76b82;
+  }
+  
+  /* Completed Task Style and Delete */
+
+    /* Complete Style */
+  .completed {
+    background-color: #8df18d; /* Turns the background green (completed) */
+    color: white;
+  }
+    /* Check style Button(Hover) */
+  .task-item .complete-btn:hover {
+    background-color: #05f705;
+  }
+    /* Delete Style */
+  .task-item .delete-btn {
+    background-color: #f81105;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+    /* Delete Hover Stlye */
+  .task-item .delete-btn:hover {
+    background-color: #9a0d03;
+  }
+  
+  /* No tasks message Style */
+  .no-tasks {
+    font-size: 18px;
+    color: #777;
+    font-style: italic;
+    margin-top: 20px;
+  }
+  

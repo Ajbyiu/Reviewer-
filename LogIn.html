@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        form > div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: -10px;
+            margin-top: 10px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <div>
+            <label for="loginEmail">Email:</label><br>
+            <input type="email" id="loginEmail" name="loginEmail">
+        </div>
+        <div class="error-message" id="loginEmailError"></div>
+
+        <div>
+            <label for="loginPassword">Password:</label><br>
+            <input type="password" id="loginPassword" name="loginPassword">
+        </div>
+        <div class="error-message" id="loginPasswordError"></div>
+
+        <button type="submit">Log In</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const loginEmailInput = document.getElementById('loginEmail');
+            const loginPasswordInput = document.getElementById('loginPassword');
+            const loginEmailError = document.getElementById('loginEmailError');
+            const loginPasswordError = document.getElementById('loginPasswordError');
+
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const email = loginEmailInput.value.trim();
+                const password = loginPasswordInput.value;
+
+                loginEmailError.textContent = '';
+                loginPasswordError.textContent = '';
+
+                let isValid = true;
+
+                if (!email.includes('@') || !email.includes('.com')) {
+                    loginEmailError.textContent = 'Please enter a valid email address containing "@" and ".com".';
+                    isValid = false;
+                }
+
+                if (password.length < 8) {
+                    loginPasswordError.textContent = 'Password must be at least 8 characters long.';
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    alert('Logged in successfully!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
